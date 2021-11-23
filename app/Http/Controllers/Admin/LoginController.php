@@ -40,10 +40,12 @@ class LoginController extends Controller
     }
      public function logout()
      {
-     if(Auth::guard('admin')->check()){
-         Auth::guard('admin')->logout();
-         return view('welcome');
+        if(Auth::guard('admin')->check()){
+            Auth::guard('admin')->logout();
+        }
+
+        return redirect('/');
      }
-    }
+
 
 }

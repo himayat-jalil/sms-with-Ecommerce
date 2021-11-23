@@ -10,8 +10,12 @@
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
+                                {{ Session('status') }}
                             </div>
+                        @endif
+                        @if (Session()->has('message'))
+
+                            <h1>{{ Session()->get('message') }}</h1>
                         @endif
 
                         {{ __('You are logged in as a student') }}

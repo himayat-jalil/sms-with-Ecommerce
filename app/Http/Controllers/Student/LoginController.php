@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Student;
 
+use App\Student;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -20,14 +21,13 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
     use AuthenticatesUsers;
 
     protected $redirectTo = RouteServiceProvider::HOME;
 
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest:student')->except('logout');
     }
  
     
@@ -36,31 +36,29 @@ class LoginController extends Controller
     return view('student.login');
     }
     
-    public function login(Request $request)
+    public function studentlogin(Request $request)
     {
         $request->validate([
-        $this->username() => 'required|string',
+        'email'=>'required|string',
         'password' => 'required|string',
         ]);
-    }
-
-    protected function attemptLogin(Request $request)
-    {
-        return $this->guard()->attempt(
-        $this->credentials($request), $request->filled('remember')
-        );
+        
+        if(Auth::guard('student')->attempt(['email'=>$request->email,'password'=>$request->password]
+        ,$request->remember)){
+            return redirect(route('student.home'));
+        }else{
+            echo "not matching";
+        }
+        echo "your are welcome";
     }
 
     public function logout(Request $request)
     {
-    $this->guard()->logout();
+        if(Auth::guard('student')->check()){
+            Auth::guard('student')->logout();
+        }
+      return view('welcome');
 
     }
-
-
-  
-    protected function guard()
-    {
-    return Auth::guard('admin');
-    }
+    
 }

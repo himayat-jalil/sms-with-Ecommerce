@@ -9,6 +9,8 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+    {{-- font awesome --}}
+    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- Styles -->
     <style>
@@ -41,6 +43,10 @@
         @endif
 
         <div class="content">
+            <i style="font-size:50px;" class="fa fa-copy"></i>
+            <i style="font-size:50px;" class="fa fa-save"></i>
+            <i style="font-size:50px;" class="fa fa-trash"></i>
+            <i style="font-size:50px;" class="fa fa-home"></i>
             <div class="title m-b-md">
                 Laravel
             </div>

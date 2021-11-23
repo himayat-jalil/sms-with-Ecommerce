@@ -36,7 +36,7 @@ Route::get('/home', 'Admin\HomeController@index')->name('admin.home');
 
 // Student routes
 Route::get('student-login', 'Student\LoginController@showLoginForm')->name('student.login');
-Route::post('student-login', 'Student\LoginController@login');
+Route::post('student-login', 'Student\LoginController@studentlogin');
 Route::get('student-logout', 'Student\LoginController@logout')->name('student.logout');
 
 // Registration Routes...
@@ -48,7 +48,7 @@ Route::get('student-password/reset', 'Student\ForgotPasswordController@showLinkR
 Route::post('student-password/email', 'Student\ForgotPasswordController@sendResetLinkEmail');
 Route::get('student-password/reset/{token}', 'Student\ResetPasswordController@showResetForm');
 Route::post('student-password/reset', 'Student\ResetPasswordController@reset');
-// Route::get('/student-home', 'HomeController@index')->name('student.home');
+Route::get('student/home', 'Student\HomeController@index')->name('student.home');
 
 // Faculty routes
 Route::get('faculty-login', 'Faculty\LoginController@showLoginForm')->name('faculty.login');
@@ -64,4 +64,4 @@ Route::get('faculty-password/reset', 'Faculty\ForgotPasswordController@showLinkR
 Route::post('faculty-password/email', 'Faculty\ForgotPasswordController@sendResetLinkEmail');
 Route::get('faculty-password/reset/{token}', 'Faculty\ResetPasswordController@showResetForm');
 Route::post('faculty-password/reset', 'Faculty\ResetPasswordController@reset');
-// Route::get('/faculty-home', 'HomeController@index')->name('home');
+Route::get('faculty/dashboard', 'Faculty\HomeController@index')->name('home');

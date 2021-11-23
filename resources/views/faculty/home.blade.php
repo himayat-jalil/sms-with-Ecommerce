@@ -1,4 +1,4 @@
-@extends('layouts.student-app')
+@extends('layouts.faculty-app')
 
 @section('content')
     <div class="container">
@@ -14,7 +14,7 @@
                             </div>
                         @endif
 
-                        {{ __('You are logged in as a student') }}
+                        {{ __('You are logged in as a teacher') }}
                     </div>
                 </div>
             </div>
