@@ -28,10 +28,10 @@ Route::get('register', 'Admin\RegisterController@showRegistrationForm')->name('r
 Route::post('register', 'Admin\RegisterController@register');
 
 // Password Reset Routes...
-Route::get('password/reset', 'Admin\ForgotPasswordController@showLinkRequestForm');
-Route::post('password/email', 'Admin\ForgotPasswordController@sendResetLinkEmail');
-Route::get('password/reset/{token}', 'Admin\ResetPasswordController@showResetForm');
-Route::post('password/reset', 'Admin\ResetPasswordController@reset');
+Route::get('password/reset', 'Admin\ForgotPasswordController@showLinkRequestForm'); 
+Route::post('password/email', 'Admin\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Admin\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Admin\ResetPasswordController@reset')->name('password.update');
 Route::get('/home', 'Admin\HomeController@index')->name('admin.home');
 
 // Student routes
