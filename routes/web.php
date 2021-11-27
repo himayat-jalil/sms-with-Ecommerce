@@ -52,8 +52,8 @@ Route::get('student/home', 'Student\HomeController@index')->name('student.home')
 
 // Faculty routes
 Route::get('faculty-login', 'Faculty\LoginController@showLoginForm')->name('faculty.login');
-Route::post('faculty-login', 'Faculty\LoginController@login');
-Route::post('faculty-logout', 'Faculty\LoginController@logout')->name('faculty.logout');
+Route::post('faculty-login', 'Faculty\LoginController@login')->name('faculty.login');
+Route::get('faculty-logout', 'Faculty\LoginController@logout')->name('faculty.logout');
 
 // Registration Routes...
 Route::get('faculty-register', 'Faculty\RegisterController@showRegistrationForm')->name('faculty.register');
@@ -64,4 +64,4 @@ Route::get('faculty-password/reset', 'Faculty\ForgotPasswordController@showLinkR
 Route::post('faculty-password/email', 'Faculty\ForgotPasswordController@sendResetLinkEmail');
 Route::get('faculty-password/reset/{token}', 'Faculty\ResetPasswordController@showResetForm');
 Route::post('faculty-password/reset', 'Faculty\ResetPasswordController@reset');
-Route::get('faculty/dashboard', 'Faculty\HomeController@index')->name('home');
+Route::get('faculty/home', 'Faculty\HomeController@index')->name('faculty-home');

@@ -37,7 +37,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest:faculty')->except('logout');
     }
      public function showLoginForm()
      {
@@ -47,28 +47,29 @@ class LoginController extends Controller
      public function login(Request $request)
      {
      $request->validate([
-     $this->username() => 'required|string',
+     'email' => 'required|string',
      'password' => 'required|string',
      ]);
+     if(Auth::guard('faculty')->attempt(['email'=>$request->email,'password'=>$request->password],$request->remember)){
+     return redirect()->route('faculty-home');
+     }else
+     {
+     dd("not matching");
+     }
      }
 
-     protected function attemptLogin(Request $request)
+     public function logout()
      {
-     return $this->guard()->attempt(
-     $this->credentials($request), $request->filled('remember')
-     );
+     if(Auth::guard('faculty')->check()){
+         Auth::guard('faculty')->logout();
+         return view('welcome');
      }
-
-     public function logout(Request $request)
-     {
-     $this->guard()->logout();
-
      }
 
 
 
      protected function guard()
      {
-     return Auth::guard('admin');
+     return Auth::guard('faculty');
      }
 }

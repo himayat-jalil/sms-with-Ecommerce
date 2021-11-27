@@ -47,17 +47,17 @@ class LoginController extends Controller
         ,$request->remember)){
             return redirect(route('student.home'));
         }else{
-            echo "not matching";
+            return redirect()->back()->with("message","Incorrect email/password");
         }
-        echo "your are welcome";
     }
 
     public function logout(Request $request)
     {
         if(Auth::guard('student')->check()){
             Auth::guard('student')->logout();
+            return view('welcome');
         }
-      return view('welcome');
+    
 
     }
     

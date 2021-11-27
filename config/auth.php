@@ -48,6 +48,10 @@ return [
          'driver' => 'session',
          'provider' => 'students',
          ],
+          'faculty' => [
+          'driver' => 'session',
+          'provider' => 'faculties',
+          ],
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -84,6 +88,11 @@ return [
          'students' => [
          'driver' => 'eloquent',
          'model' => App\Student::class,
+         ],
+        
+         'faculties' => [
+         'driver' => 'eloquent',
+         'model' => App\Faculty::class,
          ],
         
 
@@ -127,6 +136,13 @@ return [
           'expire' => 60,
           'throttle' => 60,
           ],
+          
+           'faculties' => [
+           'provider' => 'faculties',
+           'table' => 'password_resets',
+           'expire' => 60,
+           'throttle' => 60,
+           ],
     ],
 
     /*

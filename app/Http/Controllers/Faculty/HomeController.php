@@ -10,12 +10,12 @@ class HomeController extends Controller
   
     public function __construct()
     {
-        // $this->middleware('auth');
+        $this->middleware('auth:faculty');
     }
 
     public function index()
     {
-        // return view('admin.admin-home');
-        echo "Faculty dashboard";
+        return view('faculty.faculty-home');
+        
     }
 }
