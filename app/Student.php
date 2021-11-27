@@ -12,18 +12,30 @@ class Student extends Authenticatable
     protected $fillable = [
         'class_id',
         'session_id',
-        'name',
-        'fname',
-        'phone',
+        'childName',
+        'gender',
+        'birthDate',
+        'placeOfBirth',
+        'homeAddress',
+        'homePhone',
+        'momCellPhone',
+        'dadCellPhone',
+        'FatherName',
+        'workPlace',
+        'occupation',
         'email',
+        'permanentAddress',
+        'currentAddress',
+        'admissionDate',
         'password',
+        'imageURL'
         
     ];
      protected $hidden = [
      'password', 'remember_token',
      ];
-     public function sclass(){
-         return $this->belongsTo(Sclass::class);
+     public function sclasses(){
+         return $this->belongsTo(Sclass::class,'class_id');
      }
      public function session(){
          return $this->belongsTo(Session::class);

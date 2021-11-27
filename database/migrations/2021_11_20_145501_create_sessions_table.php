@@ -15,7 +15,7 @@ class CreateSessionsTable extends Migration
     {
         Schema::create('sessions', function (Blueprint $table) {
             $table->id();
-            $table->year('session_year')->default(date('Y'));
+            $table->year('sessionYear')->default(date('Y'));
             $table->timestamps();
         });
     }

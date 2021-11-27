@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
@@ -14,7 +15,13 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $students = DB::table('students')
+        ->join('sclasses','students.class_id','=','sclasses.id')
+        ->get();
+        // foreach ($students as $value) {
+        //     dd($value);
+        // }
+         return view('admin.allStudent',compact('students'));
     }
 
     /**

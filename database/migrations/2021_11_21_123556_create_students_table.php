@@ -17,10 +17,22 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('class_id');
             $table->unsignedBigInteger('session_id');
-            $table->string('name',60);
-            $table->string('fname',60);
-            $table->string('phone',20);
+            $table->string('childName',60);
+            $table->boolean('gender')->default(0);
+            $table->date('birthDate');
+            $table->string('placeOfBirth')->nullable();
+            $table->string('homeAddress');
+            $table->string('homePhone')->nullable();
+            $table->string('momCellPhone')->nullable();
+            $table->string('dadCellPhone')->nullable();
+            $table->string('FatherName')->nullable();
+            $table->string('workPlace')->nullable();
+            $table->string('occupation')->nullable();
             $table->string('email')->nullable();
+            $table->string('permanentAddress');
+            $table->string('currentAddress');
+            $table->date('admissionDate');
+            $table->string('imageURL')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->foreign('class_id')->references('id')->on('sclasses')

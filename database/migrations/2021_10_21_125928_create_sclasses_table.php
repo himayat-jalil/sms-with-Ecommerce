@@ -15,8 +15,8 @@ class CreateSclassesTable extends Migration
     {
         Schema::create('sclasses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('class_name');
-            $table->date('offered_date');
+            $table->string('className');
+            $table->date('offerDate');
             $table->timestamps();
         });
     }

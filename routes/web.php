@@ -65,3 +65,6 @@ Route::post('faculty-password/email', 'Faculty\ForgotPasswordController@sendRese
 Route::get('faculty-password/reset/{token}', 'Faculty\ResetPasswordController@showResetForm');
 Route::post('faculty-password/reset', 'Faculty\ResetPasswordController@reset');
 Route::get('faculty/home', 'Faculty\HomeController@index')->name('faculty-home');
+
+
+Route::resource('students','StudentController');

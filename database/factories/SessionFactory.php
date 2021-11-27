@@ -8,6 +8,6 @@ use Faker\Generator as Faker;
 $factory->define(Session::class, function (Faker $faker) {
     return [
         //
-        
+        'sessionYear'=>$faker->name
     ];
 });

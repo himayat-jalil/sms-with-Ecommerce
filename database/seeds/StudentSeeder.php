@@ -11,6 +11,6 @@ class StudentSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $student = factory('App\Student',10)->create();
     }
 }

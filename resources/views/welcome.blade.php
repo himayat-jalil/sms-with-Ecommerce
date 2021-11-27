@@ -151,7 +151,8 @@
             font-size: 20px;
         }
 
-        #studentLogin {
+        #studentLogin,
+        #facultyLogin {
             color: black;
         }
 
@@ -192,10 +193,13 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a href="" id="studentLogin" class="nav-link" data-toggle="modal"
-                                    data-target="#exampleModal">
+                                    data-target="#studentModal">
                                     Student Login
                                 </a>
-                                <a class="dropdown-item" href="#">Faculty Login</a>
+                                <a href="" id="facultyLogin" class="nav-link" data-toggle="modal"
+                                    data-target="#facultyModal">
+                                    Faculty Login
+                                </a>
                             </div>
                         </li>
                     </ul>
@@ -203,7 +207,7 @@
             </nav>
         </div>
         <!-- student login Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="studentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -288,6 +292,94 @@
                 </div>
             </div>
         </div>
+        {{-- end student Model --}}
+        <!-- student login Modal -->
+        <div class="modal fade" id="facultyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    @if (Session::has('message'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ Session::get('message') }}
+                        </div>
+                    @endif
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Faculty Login</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" action="{{ route('faculty.login') }}">
+                            @csrf
+
+                            <div class="form-group row">
+                                <label for="email"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="email" type="email"
+                                        class="form-control @error('email') is-invalid @enderror" name="email"
+                                        value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="password"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="password" type="password"
+                                        class="form-control @error('password') is-invalid @enderror" name="password"
+                                        required autocomplete="current-password">
+
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-6 offset-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="remember" id="remember"
+                                            {{ old('remember') ? 'checked' : '' }}>
+
+                                        <label class="form-check-label" for="remember">
+                                            {{ __('Remember Me') }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row mb-0">
+                                <div class="col-md-8 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('Login') }}
+                                    </button>
+
+                                    @if (Route::has('password.request'))
+                                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                                            {{ __('Forgot Your Password?') }}
+                                        </a>
+                                    @endif
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- end student Model --}}
         <section class="p-msg-section">
             <div class="col-sm-6 p-msg">
                 <h2 class="heading-2">Principal Message</h2>
@@ -343,7 +435,8 @@
                         <div class="card" style="width: 15rem;">
                             <i class="far fa-hand-point-up"></i>
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up
+                                <p class="card-text">Some quick example text to build on the card title and make
+                                    up
                                     the bulk of the card's content.</p>
                             </div>
                         </div>
@@ -362,7 +455,8 @@
                                     <div class="card">
                                         <img src="{{ asset('images/first.jpg') }}" class="card-img-top" alt="...">
                                         <div class="card-body">
-                                            <p class="card-text">Some quick example text to build on the card title
+                                            <p class="card-text">Some quick example text to build on the card
+                                                title
                                                 and make up the bulk of the card's content.</p>
                                         </div>
                                     </div>
@@ -371,7 +465,8 @@
                                     <div class="card">
                                         <img src="{{ asset('images/first.jpg') }}" class="card-img-top" alt="...">
                                         <div class="card-body">
-                                            <p class="card-text">Some quick example text to build on the card title
+                                            <p class="card-text">Some quick example text to build on the card
+                                                title
                                                 and make up the bulk of the card's content.</p>
                                         </div>
                                     </div>
