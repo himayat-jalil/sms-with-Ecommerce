@@ -14,7 +14,8 @@ class SessionController extends Controller
      */
     public function index()
     {
-        //
+        $session = Session::all();
+        return response()->json($session,200);
     }
 
     /**

@@ -14,7 +14,8 @@ class SclassController extends Controller
      */
     public function index()
     {
-        //
+        $classes = Sclass::all();
+        return response()->json($classes,200);
     }
 
     /**
@@ -44,9 +45,9 @@ class SclassController extends Controller
      * @param  \App\Sclass  $sclass
      * @return \Illuminate\Http\Response
      */
-    public function show(Sclass $sclass)
+    public function show(Sclass $sclass,$id)
     {
-        //
+    
     }
 
     /**

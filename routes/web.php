@@ -1,6 +1,9 @@
 <?php
 
+use App\Student;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
+use App\Notifications\StudentRegisterNotification;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,4 +70,23 @@ Route::post('faculty-password/reset', 'Faculty\ResetPasswordController@reset');
 Route::get('faculty/home', 'Faculty\HomeController@index')->name('faculty-home');
 
 
-Route::resource('students','StudentController');
+Route::get('students','StudentController@index')->name('students.index');
+Route::post('students.store','StudentController@store');
+Route::get('student/{id}','StudentController@show')->name('student.show');
+
+Route::get('classes','SclassController@index')->name('classes');
+
+Route::get('session','SessionController@index')->name('session.index');
+
+// not the part of actual project
+Route::get('pdf',function(){
+   $pdf = PDF::loadView('admin.PDFStudent');
+   $pdf->setOption('footer-center','The Smart Education System');
+   return $pdf->inline();
+    $yr = Carbon::now();
+    echo $yr->format('l jS \of F Y h:i:s A');
+});
+Route::get('notify',function(){
+   $user = Student::latest()->first();
+   $user->notify(new StudentRegisterNotification($user));
+});

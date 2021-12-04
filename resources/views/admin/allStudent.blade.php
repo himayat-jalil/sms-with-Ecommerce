@@ -28,150 +28,7 @@
                             </div>
                         </div>
                         <br><br>
-                        <form action="addNew_submit" method="get" accept-charset="utf-8" class="form-group">
-                            <div class="row">
-                                <div class="col-md-1"></div>
-                                <div class="col-md-2 p-2">
-                                    Student Name:
-                                </div>
-                                <div class="col-md-8 p-2">
-                                    <input type="text" name="name" placeholder="Enter Student Name" class="form-control">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-2 p-2">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1" />
-                                        <label class="form-check-label" for="flexRadioDefault1"> Male </label>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 p-2">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1" />
-                                        <label class="form-check-label" for="flexRadioDefault1"> Female </label>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 p-2">Date of Birth:</div>
-                                <div class="col-md-3">
-                                    <input type="date" name="dateOfBirth" placeholder="Enter Date of Birth"
-                                        class="form-control">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-1"></div>
-                                <div class="col-md-2 p-3">Place of Birth:</div>
-                                <div class="col-md-3 p-2">
-                                    <input type="text" name="placeOfBirth" placeholder="Place of Birth"
-                                        class="form-control">
-                                </div>
-                                <div class="col-md-3 p-3">Primary Language spoken at home:</div>
-                                <div class="col-md-2 p-2">
-                                    <input type="text" name="placeOfBirth" placeholder="Language" class="form-control">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-1"></div>
-                                <div class="col-sm-5  p-3"><ins>House Address:</ins></div>
-                                <div class="col-md-5 p-3"><ins>Telephone Number:</ins></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-1 p-3"></div>
-                                <div class="col-md-5">
-                                    <div class="d-flex flex-column">
-                                        <div class="p-2">
-                                            <input type="text" name="street" class="form-control" placeholder="Street">
-                                        </div>
-                                        <div class="p-2">
-                                            <input type="text" name="street" class="form-control" placeholder="City">
-                                        </div>
-                                        <div class="p-2">
-                                            <input type="text" name="street" class="form-control"
-                                                placeholder="Postal Code">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-5">
-                                    <div class="d-flex flex-column">
-                                        <div class="p-2">
-                                            <input type="text" name="street" class="form-control"
-                                                placeholder="Home Phone">
-                                        </div>
-                                        <div class="p-2">
-                                            <input type="text" name="street" class="form-control"
-                                                placeholder="Mom's Cell Phone">
-                                        </div>
-                                        <div class="p-2">
-                                            <input type="text" name="street" class="form-control"
-                                                placeholder="Dad's Cell Phone">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-1 p-3"></div>
-                                <div class="col-md-2 p-3">Email Address:</div>
-                                <div class="col-md-8 p-2">
-                                    <input type="email" name="email" placeholder="Enter Email Address"
-                                        class="form-control">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-1 p-3"></div>
-                                <div class="col-md-2 p-3">Permanent Address:</div>
-                                <div class="col-md-8 p-2">
-                                    <input type="email" name="email" placeholder="Permanent Address" class="form-control">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-1 p-3"></div>
-                                <div class="col-md-7">
-                                    <ins>Guardian's details</ins>
-                                    <div class="d-flex flex-column">
-                                        <div class="p-2">
-                                            <input type="text" name="name" class="form-control" placeholder="Name">
-                                        </div>
-                                        <div class="p-2">
-                                            <input type="text" name="workPlace" class="form-control"
-                                                placeholder="Work place">
-                                        </div>
-                                        <div class="p-2">
-                                            <input type="text" name="occupation" class="form-control"
-                                                placeholder="Occupation">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-1 p-3"></div>
-                                <div class="col-md-2 p-3">Class:</div>
-                                <div class="col-md-3 p-2">
-                                    <input type="email" name="class" placeholder="Select Class" class="form-control">
-                                </div>
-                                <div class="col-md-2 p-3">Admission date:</div>
-                                <div class="col-md-3 p-2">
-                                    <input type="date" name="admissionDate" placeholder="Admission Date"
-                                        class="form-control">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3 p-3"></div>
-                                <div class="col-md-4 p-2">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="customFile">
-                                        <label class="custom-file-label" for="customFile">Upload Image</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3 p-3"></div>
-                                <div class="col-md-6 m-3">
-                                    <button type="button" class="btn btn-primary btn-block">Submit</button>
-                                </div>
-                            </div>
-                        </form>
+                        <add-new></add-new>
                     </div>
                     {{-- add new form end --}}
                 </div>
@@ -182,10 +39,11 @@
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th style="width:5%;" scope="col">ID</th>
+                    <th style="width:3%;" scope="col">ID</th>
                     <th style="width:12%;" scope="col">Name</th>
                     <th style="width:12%;" scope="col">Father Name</th>
-                    <th style="width:10%;" scope="col">Class</th>
+                    <th style="width:6%;" scope="col">Gender</th>
+                    <th style="width:6%;" scope="col">Class</th>
                     <th style="width:10%;" scope="col">Image</th>
                     <th style="width:11%;" scope="col">Action</th>
                 </tr>
@@ -196,6 +54,7 @@
                         <th scope="row">{{ $student->id }}</th>
                         <td>{{ $student->childName }}</td>
                         <td>{{ $student->FatherName }}</td>
+                        <td>{{ $student->gender }}</td>
                         <td>{{ $student->className }}</td>
                         <td><img src="{{ asset('images/first.jpg') }}"
                                 style="width:60px; height:60px; border-radius:50%;"></td>
@@ -205,7 +64,8 @@
                                 </div>
                                 <div class="p-2"><button class="btn btn-danger btn-sm">Delete</button>
                                 </div>
-                                <div class="p-2"><button class="btn btn-primary btn-sm">view</button>
+                                <div class="p-2"><button class="btn btn-primary btn-sm"><a
+                                            href="{{ url('student/' . $student->id) }}">View</a></button>
                                 </div>
                             </div>
                         </td>

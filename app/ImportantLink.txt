@@ -1,0 +1,5 @@
+https://pusher.com/tutorials/realtime-chart-laravel/
+
+Carbon date and time
+
+https://www.digitalocean.com/community/tutorials/easier-datetime-in-laravel-and-php-with-carbon
